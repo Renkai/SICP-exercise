@@ -2,5 +2,3 @@
   (if (< d 0)
       (cons (- n) (- d))
       (const n d)))
-
-
