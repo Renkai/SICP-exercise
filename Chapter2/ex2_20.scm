@@ -1,0 +1,10 @@
+(define (same-parity a . b)
+  (define (sp? a b)
+    (= 0 (remainder (- a b) 2)))
+  (define (sm-iter a ret b)
+    (if (null? b)
+	ret
+	(if (sp? a (car b))
+	    (sm-iter a (append ret (list (car b))) (cdr b))
+	    (sm-iter a ret (cdr b)))))
+  (sm-iter a (list a) b))
