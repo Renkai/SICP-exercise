@@ -11,3 +11,8 @@
 	(iter (op result (car rest))
 	      (cdr rest))))
   (iter initial sequence))
+
+(define (flatmap proc seq)
+  (accumulate append () (map proc seq)))
+
+(map (lambda (x) (+ 1 x)) (list 1 2 3))
